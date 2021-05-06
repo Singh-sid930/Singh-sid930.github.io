@@ -101,16 +101,16 @@
 <h3 class="year">2020</h3>
 <ol class="bibliography"><li>
 
-<div id="alena2020l2f">
+<div id="singh2020iclr">
 
-    <span class="title">Learning-to-Fly: Learning-based Collision Avoidance for Scalable Urban Air Mobility</span>
+    <span class="title">CURIOSITY INCREASES EQUALITY IN COMPETITIVE RESOURCE ALLOCATION</span>
     <span class="author">
 
 
 
 
 
-                Rodionova, Alëna*,
+                Bucher, Bernadette*,
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-              <em>Pant, Yash Vardhan*</em>,
+              <em>Singh, Siddharth*</em>,
 
 
 
@@ -128,29 +128,11 @@
 
 
 
-                Jang, Kuk J.,
+                Clelia de Mutalier,
 
+                Kostas Daniilidis,
 
-
-
-
-
-
-
-
-                <a href="http://web.engr.oregonstate.edu/~abbasho/" target="_blank">Abbas, Houssam</a>,
-
-
-
-
-
-
-
-
-
-                and <a href="https://www.seas.upenn.edu/~rahulm/" target="_blank">Mangharam, Rahul</a>
-
-
+                Vijay Balasubramanian
 
 
 
@@ -158,7 +140,7 @@
 
     <span class="periodical">
 
-      <em>In IEEE International Conference on Intelligent Transportation Systems (to appear)</em>
+      <em>In Bridging AI and Cognitive Science (BAICS) workshop of The International Conference on Learning Representations</em>
 
 
       2020
@@ -171,7 +153,7 @@
     [<a class="abstract">Abstract</a>]
 
 
-    [<a href="https://arxiv.org/abs/2006.13267" target="_blank">Link</a>]
+    [<a href="https://baicsworkshop.github.io/pdf/BAICS_12.pdf" target="_blank">Link</a>]
 
 
 
@@ -185,7 +167,15 @@
   <!-- Hidden abstract block -->
 
   <span class="abstract hidden">
-    <p>With increasing urban population, there is global interest in Urban Air Mobility (UAM), where hundreds of autonomous Unmanned Aircraft Systems (UAS) execute missions in the airspace above cities. Unlike traditional human-in-the-loop air traffic management, UAM requires decentralized autonomous approaches that scale for an order of magnitude higher aircraft densities and are applicable to urban settings. We present Learning-to-Fly (L2F), a decentralized on-demand airborne collision avoidance framework for multiple UAS that allows them to independently plan and safely execute missions with spatial, temporal and reactive objectives expressed using Signal Temporal Logic. We formulate the problem of predictively avoiding collisions between two UAS without violating mission objectives as a Mixed Integer Linear Program (MILP). This however is intractable to solve online. Instead we develop L2F, a two-stage collision avoidance method that consists of: 1)a learning-based decision making scheme and 2) a distributed, linear programming-based UAS control algorithm. Through extensive simulations, we show the real-time applicability of our method which is ≈ 6000× faster than the MILP approach and can resolve 99.4% of collisions when there is ample room to maneuver, and shows graceful degradation in performance otherwise. We also compare L2F to two other methods and demonstrate an implementation on quad-rotor robots.</p>
+    <p>We consider multiple agents using different strategies to compete for resources
+with a diverse distribution of rewards. Statistical theory shows that two kinds of
+equilibria are possible: (1) where some agents “settle” on a fixed resource while
+others visit diverse sites, and (2) where all agents pursue a similar strategy of visiting diverse sites. The first equilibrium shows a highly skewed reward distribution;
+in the second equilibrium most agents are similarly successful. We show that a
+population of agents can learn these equilibrium strategies through reinforcement
+learning. In conventional Q-learning, the population of agents learns the equilibrium strategy with skewed rewards. If we add curiosity, an intrinsic motivation
+to explore, Q-learning converges faster, and produces the second equilibrium in
+which most agents get similar average rewards. Thus, curiosity increases equality.</p>
   </span>
 
 </div>
@@ -194,64 +184,31 @@
 <h3 class="year">2019</h3>
 <ol class="bibliography"><li>
 
-<div id="jang2019iccps">
+<div id="dasari2019CoRL">
 
-    <span class="title">Robustness Evaluation of Computer-aided Clinical trials for Medical Devices</span>
+    <span class="title">RoboNet: Large-Scale Multi-Robot Learning</span>
     <span class="author">
 
 
 
 
 
-                Jang, Kuk Jin,
-
-
-
-
-
-
-
-
-              <em>Pant, Yash Vardhan</em>,
-
-
-
-
-
-
-
-
-                Zhang, Bo,
-
-
-
-
-
-
-
-
-
-                Weimer, James,
-
-
-
-
-
-
-
-
-
-                and <a href="https://www.seas.upenn.edu/~rahulm/" target="_blank">Mangharam, Rahul</a>
-
-
-
+              Dasari,Sudeep ,
+              Ebert, Frederik ,
+              Tian, Stephen ,
+              Nair, Suraj ,
+               Bucher, Bernadette ,
+                Schmeckpeper, Karl ,
+              <em>Singh, Siddharth</em>,
+              Levine, Sergey ,
+                Finn, Chelsea
 
 
     </span>
 
     <span class="periodical">
 
-      <em>In Proceedings of the ACM/IEEE International Conference on Cyber-Physical Systems (ICCPS)</em>
+      <em>In Conference on Robot Learning (CoRL)</em>
 
 
       2019
@@ -264,7 +221,7 @@
     [<a class="abstract">Abstract</a>]
 
 
-    [<a href="https://repository.upenn.edu/cgi/viewcontent.cgi?article=1137&amp;context=mlab_papers" target="_blank">Link</a>]
+    [<a href="https://arxiv.org/abs/1910.11215" target="_blank">Link</a>]
 
 
 
@@ -278,9 +235,66 @@
   <!-- Hidden abstract block -->
 
   <span class="abstract hidden">
-    <p>Medical cyber-physical systems, such as the implantable cardioverter defibrillator (ICD), require evaluation of safety and efficacy in the context of a patient population in a clinical trial. Advances in computer modeling and simulation allow for generation of a simulated cohort or virtual cohort which mimics a patient population and can be used as a source of prior information. A major obstacle to acceptance of simulation results as a source of prior information is the lack of a framework for explicitly modeling sources of uncertainty in simulation results and quantifying the effect on trial outcomes.
-In this work, we formulate the Computer-Aided Clinical Trial (CACT) within a Bayesian statistical framework allowing explicit modeling of assumptions and utilization of simulation results at all stages of a clinical trial. To quantify the robustness of the CACT outcome with respect to a simulation assumption, we define δ-robustness as the minimum perturbation of the base prior distribution resulting in a change of the CACT outcome and provide a method to estimate the δ-robustness.
-We demonstrate the utility of the framework and how the results of δ-robustness evaluation can be utilized at various stages of a clinical trial through an application to the Rhythm ID Goes Head-to-head Trial (RIGHT), which was a comparative evaluation of the safety and efficacy of specific software algorithms across different implantable cardiac devices. Finally, we introduce a hardware interface that allows for direct interaction with the physical device in order to validate and confirm the results of a CACT for implantable cardiac devices.</p>
+    <p>Robot learning has emerged as a promising tool for taming the complexity and diversity of the real world. Methods based on high-capacity models, such as deep networks, hold the promise of providing effective generalization to a wide range of open-world environments. However, these same methods typically require large amounts of diverse training data to generalize effectively. In contrast, most robotic learning experiments are small-scale, single-domain, and single-robot. This leads to a frequent tension in robotic learning: how can we learn generalizable robotic controllers without having to collect impractically large amounts of data for each separate experiment? In this paper, we propose RoboNet, an open database for sharing robotic experience, which provides an initial pool of 15 million video frames, from 7 different robot platforms, and study how it can be used to learn generalizable models for vision-based robotic manipulation. We combine the dataset with two different learning algorithms: visual foresight, which uses forward video prediction models, and supervised inverse models. Our experiments test the learned algorithms' ability to work across new objects, new tasks, new scenes, new camera viewpoints, new grippers, or even entirely new robots. In our final experiment, we find that by pre-training on RoboNet and fine-tuning on data from a held-out Franka or Kuka robot, we can exceed the performance of a robot-specific training approach that uses 4x-20x more data. For videos and data, see the project webpage: https://www.robonet.wiki/</p>
+  </span>
+
+</div>
+</li>
+
+<li>
+
+<div id="Okelly2019Neurips">
+
+    <span class="title">F1/10: An open-source 1/10th scale platform for autonomous racing and reinforcement learning</span>
+    <span class="author">
+
+
+
+
+
+              O,Kelly,Matthew ,
+              Dhruv Karthik ,
+              Hongrui Zheng ,
+              Joseph Auckley ,
+               <em>Siddharth Singh</em> ,
+              Shashank D Prasad ,
+              Kim Luong,
+              Matt R Lebermann  ,
+              Rahul Mangharam
+
+
+    </span>
+
+    <span class="periodical">
+
+      <em>In Neural Information Processing Systems (Neurips)</em>
+
+
+      2019
+
+    </span>
+
+
+  <span class="links">
+
+    [<a class="abstract">Abstract</a>]
+
+
+    [<a href="https://nips.cc/Conferences/2019/ScheduleMultitrack?event=15447" target="_blank">Link</a>]
+
+
+
+
+
+
+
+
+  </span>
+
+  <!-- Hidden abstract block -->
+
+  <span class="abstract hidden">
+    <p>The deployment of learning algorithms on autonomous vehicles is expensive, slow, and potentially unsafe. We present the F1/10 platform, a low-cost open-source 1/10th scale racecar and validated simulator which enables safe and rapid experimentation suitable for laboratory research settings. The F1/10 environment and hardware offer an accessible way to validate reinforcement learning policies learned in simulation and on a real car via the same intuitive OpenAI Gym API. To this effect, we demonstrate two approaches based on reinforcement learning that enable the transfer of policies from simulation to a real life track. The first demonstration details the use of our modular photorealistic simulator to learn an end-to-end racing policy in a self-supervised manner. Here, we demonstrate the F1/10’s capability for distributed online learning by sending batches of ‘experiences’ (video streams, odometry, etc.) back to a server, which asynchronously trains on this data and updates the racecar’s network weights on the fly. We also show a way to take quasi-deterministic ‘steps’ and perform ‘resets’ on the real car, thereby more closely mimicking the Gym API standards. The second demonstration uses our lightweight physics simulator to perform a joint optimization over a parameterized description of the racing trajectory, planning algorithms, and car dynamics, resulting in performance which exceeds all other entries in real-life races.</p>
   </span>
 
 </div>
@@ -289,75 +303,21 @@ We demonstrate the utility of the framework and how the results of δ-robustness
 <h3 class="year">2018</h3>
 <ol class="bibliography"><li>
 
-<div id="li2018naecon">
+<div id="singh2019AIR">
 
-    <span class="title">Design and implementation of a centralized system for autonomous unmanned aerial vehicle trajectory conflictresolution</span>
+    <span class="title">Gradient Aware - Shrinking Domain based Control Design for Reactive
+Planning Frameworks used in Autonomous Vehicles</span>
     <span class="author">
 
 
 
 
 
-                Li, Max Z.,
-
-
-
-
-
-
-
-
-
-                Tan, William R.,
-
-
-
-
-
-
-
-
-
-                Prakash, Sahithya M.,
-
-
-
-
-
-
-
-
-
-                Kennedy, John F.,
-
-
-
-
-
-
-
-
-
-                Ryerson, Megan S.,
-
-
-
-
-
-
-
-
-
-                Lee, Daewon,
-
-
-
-
-
-
-
-
-              and <em>Pant, Yash Vardhan</em>
+      Adarsh Modh
+, Siddharth Singh
+, A. V. S. Sai Bhargav Kumar
+, Sriram N. N.
+, K. Madhava Krishna
 
 
 
@@ -366,7 +326,7 @@ We demonstrate the utility of the framework and how the results of δ-robustness
 
     <span class="periodical">
 
-      <em>In IEEE National Aerospace and Electronics Conference (NAECON)</em>
+      <em>In Advances in Robotics (AIR)</em>
 
 
       2018
@@ -379,7 +339,7 @@ We demonstrate the utility of the framework and how the results of δ-robustness
     [<a class="abstract">Abstract</a>]
 
 
-    [<a href="https://ieeexplore.ieee.org/document/8556719" target="_blank">Link</a>]
+    [<a href="https://arxiv.org/pdf/1804.08679.pdf" target="_blank">Link</a>]
 
 
 
@@ -393,90 +353,27 @@ We demonstrate the utility of the framework and how the results of δ-robustness
   <!-- Hidden abstract block -->
 
   <span class="abstract hidden">
-    <p>The ability of autonomous unmanned aerial vehicles(aUAVs)   to   carry   out   a   diverse   range   of   missions   presentsenormous  societal  and  economic  benefits.  However,  one  criticalsafety  issue  that  must  be  addressed  prior  to  large-scale  aUAVadoption is the potential for aUAV-on-aUAV trajectory conflicts.Current  decentralized  methods  for  trajectory  conflict  resolutionare  energy  and  resource  intensive,  rendering  them  difficult  toscale and implement. We propose a centralized, infrastructure-to-vehicle (I2V) approach that leverages modular embedded systems(“control  modules”).  A  voxel-based  airspace  reservation  systemis  maintained  by  the  control  module,  which  interrogates  andretrieves  the  stored  trajectories  from  aUAVs  approaching  thereservation   airspace.   Trajectory conflict search   is   performed by  the  control  module,  and  conflict  resolution  protocols  aretransmitted  back  to  the  aUAVs.  Our  communication  protocolis  Wi-Fi-based  and  leverages  a  lightweight  on-board  ODROIDmicrocontroller;   the   setup   is   agnostic   to   the   specific   aUAVplatform  and  firmware.  We  simulate  various  airspace  situationsand test the resiliency of our reservation system in MATLAB. Wealso leverage two aUAV testbeds to demonstrate the performanceof  our  centralized  air  traffic  control  regime.</p>
-  </span>
-
-</div>
-</li>
-<li>
-
-<div id="pant2018fly">
-
-    <span class="title">Fly-by-Logic: Control of Multi-Drone Fleets with Temporal Logic Objectives</span>
-    <span class="author">
-
-
-
-
-              <em>Pant, Yash Vardhan</em>,
-
-
-
-
-
-
-
-
-                <a href="http://web.engr.oregonstate.edu/~abbasho/" target="_blank">Abbas, Houssam</a>,
-
-
-
-
-
-
-
-
-
-                Quaye, Rhudii A,
-
-
-
-
-
-
-
-
-
-                and <a href="https://www.seas.upenn.edu/~rahulm/" target="_blank">Mangharam, Rahul</a>
-
-
-
-
-
-    </span>
-
-    <span class="periodical">
-
-      <em>In Proceedings of the ACM/IEEE International Conference on Cyber-Physical Systems (ICCPS)</em>
-
-
-      2018
-
-    </span>
-
-
-  <span class="links">
-
-    [<a class="abstract">Abstract</a>]
-
-
-    [<a href="https://repository.upenn.edu/cgi/viewcontent.cgi?article=1127&amp;context=mlab_papers" target="_blank">Link</a>]
-
-
-
-
-
-
-
-
-    [<a href="https://github.com/yashpant/FlyByLogic" target="_blank">Code</a>]
-
-  </span>
-
-  <!-- Hidden abstract block -->
-
-  <span class="abstract hidden">
-    <p>The problem of safe planning and control for multi- drone systems across a variety of missions is of critical impor- tance, as the scope of tasks assigned to such systems increases. In this paper, we present an approach to solve this problem for multi-quadrotor missions. Given a mission expressed in Signal Temporal Logic (STL), our controller maximizes robustness to generate trajectories for the quadrotors that satisfy the STL spec- ification in continuous-time. We also show that the constraints on our optimization guarantees that these trajectories can be tracked nearly perfectly by lower level off-the-shelf position and attitude controllers. Our approach avoids the oversimplifying abstractions found in many planning methods, while retaining the expressiveness of missions encoded in STL allowing us to handle complex spatial, temporal and reactive requirements. Through experiments, both in simulation and on actual quadrotors, we show the performance, scalability and real-time applicability of our method.</p>
+    <p>— In this paper, we present a novel control law for
+longitudinal speed control of autonomous vehicles. The key
+contributions of the proposed work include the design of a
+control law that reactively integrates the longitudinal surface
+gradient of road into its operation. In contrast to the existing
+works, we found that integrating the path gradient into the
+control framework improves the speed tracking efficacy. Since
+the control law is implemented over a shrinking domain
+scheme, it minimizes the integrated error by recomputing
+the control inputs at every discretized step and consequently
+provides less reaction time. This makes our control law
+suitable for motion planning frameworks that are operating at
+high frequencies. Furthermore, our work is implemented using
+a generalized vehicle model and can be easily extended to
+other classes of vehicles. The performance of gradient aware -
+shrinking domain based controller is implemented and tested
+on a stock electric vehicle on which a number of sensors
+are mounted. Results from the tests show the robustness of
+our control law for speed tracking on a terrain with varying
+gradient while also considering stringent time constraints
+imposed by the planning framework.</p>
   </span>
 
 </div>
@@ -488,76 +385,19 @@ We demonstrate the utility of the framework and how the results of δ-robustness
 <h3 class="year">2021</h3>
 <ol class="bibliography"><li>
 
-<div id="pant2019fads">
+<div id="Georg2021RSS">
 
-    <span class="title">FADS: Framework for Autonomous Drone Safety</span>
+    <span class="title">Learning to Map forActive Semantic Goal Navigation</span>
     <span class="author">
 
 
 
 
-              <em>Pant, Yash Vardhan</em>,
-
-
-
-
-
-
-
-
-                Li, Max Z.,
-
-
-
-
-
-
-
-
-
-                Rodionova, Alena,
-
-
-
-
-
-
-
-
-
-                Quaye, Rhudii A.,
-
-
-
-
-
-
-
-
-
-                <a href="http://web.engr.oregonstate.edu/~abbasho/" target="_blank">Abbas, Houssam</a>,
-
-
-
-
-
-
-
-
-
-                Ryerson, Megan,
-
-
-
-
-
-
-
-
-
-                and <a href="https://www.seas.upenn.edu/~rahulm/" target="_blank">Mangharam, Rahul</a>
-
-
+              Georgakis Georgios,
+              Bernadette Bucher,
+              <em> Siddharth Singh </em>,
+              Karl Schmeckpeper,
+              Kostas Daniilidis
 
 
 
@@ -565,7 +405,7 @@ We demonstrate the utility of the framework and how the results of δ-robustness
 
     <span class="periodical">
 
-      <em>In Submitted to the IEEE Transactions on Intelligent Transportation Systems</em>
+      <em> Submitted to the Robotics: Science and Systems Conference (RSS)</em>
 
 
       2021
@@ -586,6 +426,11 @@ We demonstrate the utility of the framework and how the results of δ-robustness
   </span>
 
   <!-- Hidden abstract block -->
+  <!-- Hidden abstract block -->
+
+  <span class="abstract hidden">
+    <p>— We consider the problem of object goal navigation inunseen environments. In our view, solving this problem requireslearning  of  contextual  semantic  priors,  a  challenging  endeavourgiven the spatial and semantic variability of indoor environments.Current methods learn to implicitly encode these priors throughgoal-oriented  navigation  policy  functions  operating  on  spatialrepresentations  that  are  limited  in  the  agent’s  observable  areas.In this work, we propose a novel framework that actively learnsto generate semantic maps outside the field of view of the agentand  leverages  the  uncertainty  over  the  semantic  classes  in  theunobserved areas to decide on long term goals. We demonstratethat through this spatial prediction strategy, we are able to learnsemantic  priors  in  scenes  that  can  be  leveraged  in  unknownenvironments. Additionally, we show how different objectives canbe  defined  by  balancing  exploration  with  exploitation  duringsearching   for   semantic   targets.   Our   method   is   validated   inthe  visually  realistic  environments  offered  by  the  Matterport3Ddataset  and  show  state  of  the  art  results  on  the  object  goalnavigation  task.</p>
+  </span>
 
 </div>
 </li></ol>
