@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+  ════════════════════════════════════════════════════════════════════
+  NEW POEM TEMPLATE
+  ════════════════════════════════════════════════════════════════════
+  This file starts with "_", so Jekyll / GitHub Pages will NOT publish it.
+  It is your starting point for every new poem.
+
+  TO ADD A POEM:
+    1. Copy this file to:  poems/<your-poem-slug>/index.html
+       (e.g. poems/an-evening-in-march/index.html)
+    2. Fill in: <title>, the canonical <link>, the poem title, and the verse.
+    3. Choose the MOOD by editing the :root variables below — that single
+       block controls the whole feeling of the page.
+    4. Add a matching <li> entry to poems/index.html so it shows in the hub
+       (copy the sample <li> there and set --swatch to this poem's --accent).
+
+  THEME IDEAS (just sets of the variables below):
+    • grief / ash     bg #14110f  accent #b08968  fonts EB Garamond + Spectral
+    • love / dawn     bg #fff7f2  ink #3a2b2b  accent #e07a5f  (light theme!)
+    • rage / ember    bg #120606  accent #ff5436  fonts Oswald + Spectral
+    • calm / meadow   bg #f4f6ee  ink #2f3a2a  accent #7c9070  (light theme!)
+  For a LIGHT poem, set --bg light and --ink dark, and soften --bg-glow.
+  ════════════════════════════════════════════════════════════════════
+-->
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>POEM TITLE | Siddharth Singh</title>
+  <meta name="description" content="A poem.">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  <link rel="canonical" href="/poems/POEM-SLUG/">
+
+  <!-- Pick fonts at https://fonts.google.com and paste the <link> here. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Spectral:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d1f29;               /* page background */
+      --bg-glow: #16323f;          /* soft radial glow behind the verse */
+      --ink: #dfe9ec;             /* verse text color */
+      --ink-soft: #8fa6ae;        /* title rule, byline, back-link */
+      --accent: #6fc3c0;          /* the poem's signature color */
+      --font-display: 'Cormorant Garamond', Georgia, serif;  /* title */
+      --font-verse: 'Spectral', Georgia, serif;              /* the poem */
+      --verse-size: 1.5rem;
+      --verse-leading: 2.1;       /* line-height of the verse */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(ellipse at 50% 22%, var(--bg-glow), var(--bg) 70%);
+      color: var(--ink);
+      font-family: var(--font-verse);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+    .poem-wrap { flex: 1 0 auto; width: 100%; max-width: 40rem; margin: 0 auto; padding: 7vh 1.5rem 4rem; text-align: center; }
+    .poem-title { font-family: var(--font-display); font-weight: 400; font-size: 3rem; line-height: 1.1; margin: 0 0 .4rem; color: #fff; }
+    .poem-rule { width: 3.5rem; height: 1px; border: 0; background: var(--accent); opacity: .8; margin: 1.2rem auto 2.6rem; }
+    .verse { white-space: pre-wrap; font-family: var(--font-verse); font-weight: 300; font-size: var(--verse-size); line-height: var(--verse-leading); color: var(--ink); font-style: italic; text-wrap: balance; }
+    .verse .stanza { display: block; }
+    .verse .stanza + .stanza { margin-top: 1.6rem; }
+    .byline { margin-top: 3.5rem; font-family: var(--font-display); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-display); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; }
+    .back:hover { color: var(--accent); }
+    @media (max-width: 480px) { :root { --verse-size: 1.25rem; } .poem-title { font-size: 2.2rem; } }
+  </style>
+</head>
+
+  <body>
+
+    <main class="poem-wrap">
+      <h1 class="poem-title">POEM TITLE</h1>
+      <hr class="poem-rule" />
+
+      <!-- Each stanza in its own <p class="stanza">. Line breaks inside are
+           preserved automatically (no <br> needed) — just press Enter. -->
+      <div class="verse">
+<p class="stanza">First stanza, first line.
+First stanza, second line.</p>
+
+<p class="stanza">Second stanza begins here,
+and carries on.</p>
+      </div>
+
+      <p class="byline">Siddharth Singh</p>
+    </main>
+
+    <a class="back" href="/poems/">&larr; all poems</a>
+
+  </body>
+
+</html>

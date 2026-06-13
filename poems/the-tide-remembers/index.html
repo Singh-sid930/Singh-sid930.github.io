@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>The Tide Remembers | Siddharth Singh</title>
+  <meta name="description" content="A poem.">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  <link rel="canonical" href="/poems/the-tide-remembers/">
+
+  <!--
+    ============================================================
+    PER-POEM THEME
+    This page is intentionally self-contained: no /assets/css/main.css.
+    Everything below is driven by the CSS variables in :root, so a new
+    poem's mood = change these ~8 values (and the verse text further down).
+    This sample is "tidal / nocturnal": deep slate-teal night, sea-foam
+    accent, slow serif.
+    ============================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Spectral:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d1f29;                /* page background */
+      --bg-glow: #16323f;           /* radial glow center */
+      --ink: #dfe9ec;              /* verse text */
+      --ink-soft: #8fa6ae;         /* muted text (title rule, byline) */
+      --accent: #6fc3c0;           /* sea-foam accent */
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-verse: 'Spectral', Georgia, serif;
+      --verse-size: 1.5rem;
+      --verse-leading: 2.1;        /* line-height for the verse */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(ellipse at 50% 22%, var(--bg-glow), var(--bg) 70%);
+      color: var(--ink);
+      font-family: var(--font-verse);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .poem-wrap {
+      flex: 1 0 auto;
+      width: 100%;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 7vh 1.5rem 4rem;
+      text-align: center;
+    }
+
+    .poem-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 3rem;
+      line-height: 1.1;
+      letter-spacing: .01em;
+      margin: 0 0 .4rem;
+      color: #fff;
+    }
+    .poem-rule {
+      width: 3.5rem; height: 1px; border: 0;
+      background: var(--accent); opacity: .8;
+      margin: 1.2rem auto 2.6rem;
+    }
+
+    /* The verse. white-space: pre-wrap preserves your exact line breaks
+       and indentation — paste the poem as written. */
+    .verse {
+      white-space: pre-wrap;
+      font-family: var(--font-verse);
+      font-weight: 300;
+      font-size: var(--verse-size);
+      line-height: var(--verse-leading);
+      color: var(--ink);
+      font-style: italic;
+      text-wrap: balance;
+    }
+    .verse .stanza { display: block; }
+    .verse .stanza + .stanza { margin-top: 1.6rem; }
+
+    .byline {
+      margin-top: 3.5rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      padding: 2rem 0 2.5rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      letter-spacing: .15em;
+      color: var(--ink-soft);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .back:hover { color: var(--accent); }
+
+    @media (max-width: 480px) {
+      :root { --verse-size: 1.25rem; }
+      .poem-title { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+  <body>
+
+    <main class="poem-wrap">
+      <h1 class="poem-title">The Tide Remembers</h1>
+      <hr class="poem-rule" />
+
+      <!--
+        Write the poem here. Wrap each stanza in <p class="stanza"> ... </p>.
+        Inside a stanza, line breaks in the source ARE preserved (pre-wrap),
+        so just press Enter for a new line — no <br> needed.
+        (This is placeholder text — replace it with your poem.)
+      -->
+      <div class="verse">
+<p class="stanza">The shore forgets, but the water does not.
+It carries the cold of every winter
+folded quiet beneath its turning.</p>
+
+<p class="stanza">Call it by an old name and it answers
+in the grey language of returning things —
+a gull, a hull, a hand let go too soon.</p>
+
+<p class="stanza">I came to leave something here.
+The tide took it, and gave it back,
+and took it again, gentler the second time.</p>
+      </div>
+
+      <p class="byline">Siddharth Singh</p>
+    </main>
+
+    <a class="back" href="/poems/">&larr; all poems</a>
+
+  </body>
+
+</html>
