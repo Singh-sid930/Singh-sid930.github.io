@@ -26,7 +26,7 @@ Savera bhi aana tha, har baar, har kahin
 
 Shaam se fir keh padi, ki tu na ja, tab tak kahin
 
-Shaam bhi fir keh padi, savere ke bad , milogi yahin?
+Shaam bhi fir keh padi, savere ke bad , tu hogi yahin?
 
 
 

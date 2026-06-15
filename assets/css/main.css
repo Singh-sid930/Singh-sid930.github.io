@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 /******************************************************************************/
 /******************************************************************************/
 /* portfolio tinkering */
@@ -545,3 +546,100 @@ sup { position: relative; vertical-align: middle; top: -0.9ex; }
 h1, h2, h3, h4, h5, h6 { font-weight: 100; }
 
 div.equation { margin: 0.5rem 0; }
+
+/******************************************************************************/
+/* Moody "misted sea" theme — muddy blue-green pastels, deep teal-slate ink,  */
+/* and a quiet dusty-teal accent. Foggy, desaturated, a little mysterious.     */
+/******************************************************************************/
+
+body {
+  color: #283a35;
+  background-color: #c7d2ce;
+  /* a pale sea-green mist up top, a deeper blue-teal welling from below,
+     over a sky that sinks from misty sage to muddy teal */
+  background-image:
+    radial-gradient(ellipse at 72% -8%, rgba(108, 142, 135, 0.42), transparent 55%),
+    radial-gradient(ellipse at 6% 108%, rgba(70, 104, 116, 0.38), transparent 52%),
+    linear-gradient(158deg, #e3e9e4 0%, #ccd7d2 40%, #aebfba 72%, #99aca9 100%);
+  background-attachment: fixed;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* links / accent — dusty teal */
+a { color: #4e807a; }
+a:hover { color: #38605b; }
+
+/* the fixed top bar: misted sea-glass */
+.site-header {
+  background-color: rgba(224, 231, 227, 0.88);
+  border-bottom: 1px solid #bdcbc5;
+  opacity: 1;
+  -webkit-backdrop-filter: saturate(120%) blur(10px);
+  backdrop-filter: saturate(120%) blur(10px);
+}
+.site-nav .page-link { color: #3a4a45; }
+.site-nav .page-link:hover { color: #4e807a; }
+@media screen and (max-width: 600px) {
+  .site-nav { background-color: rgba(224, 231, 227, 0.97); border-color: #bdcbc5; }
+}
+
+/* headings take the deep teal-slate ink */
+h1, h2, h3, h4, h5, h6 { color: #1f302b; }
+
+/* footer: the deep tide-line anchor */
+footer { background-color: #26312d; border-top-color: #26312d; color: #a8b7b0; }
+footer a { color: #8eb6ac; }
+footer a:hover { color: #b6d6cd; }
+
+/* soft, desaturated borders & surfaces */
+hr { border-bottom-color: #bdcbc5; }
+.news { border-top-color: #c6d1cc; }
+.news table .date { color: #5b6b65; }
+.post-list > li { border-bottom-color: #c6d1cc; }
+.header-bar { border-bottom-color: #bdcbc5; }
+blockquote { border-left-color: #8db0a8; color: #3a4a45; }
+.profile img { box-shadow: 0 8px 28px rgba(34, 46, 42, 0.22); }
+pre { background-color: #dce6e0; }
+code { background-color: #d9e3de; }
+.button-blue { background-color: #4e807a; }
+.bibliography li .author a { border-bottom-color: #4e807a; }
+table > thead > tr > th, table > thead > tr > td,
+table > tbody > tr > th, table > tbody > tr > td,
+table > tfoot > tr > th, table > tfoot > tr > td { border-top-color: #c4d0cb; }
+table > thead > tr > th { border-bottom-color: #adbbb4; }
+
+::selection { background: #bbd1ca; color: #1f302b; }
+
+/* ---- moody literary typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: .005em;
+  color: #1f302b;
+}
+.post-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.9rem, 6vw, 4rem);
+  letter-spacing: 0;
+  line-height: 1.04;
+}
+.post-title strong { font-weight: 700; }
+.post-description {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #5b6b65;
+}
+.site-nav .page-link {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  letter-spacing: .02em;
+}
+/* the news / section bodies read airier in the serif */
+.news h2 { font-size: 2rem; }
+blockquote { font-style: italic; }
