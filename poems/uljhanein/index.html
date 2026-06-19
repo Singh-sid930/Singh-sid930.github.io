@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>उलझनें | Siddharth Singh</title>
+  <meta name="description" content="उलझनें — the tangles silence leaves. A poem.">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  <link rel="canonical" href="/poems/uljhanein/">
+
+  <!--
+    ============================================================
+    PER-POEM THEME — "उलझनें / Uljhanein" (tangles, unspoken words)
+    Mood: a cool, foggy, silent night — questions and answers that
+    never reached the lips. Deep indigo-slate with a moonlit haze.
+    Devanagari script, Hindustani (Urdu-leaning) vocabulary.
+    ============================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Rozha+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #d9dfe8;            /* misty pale blue-grey verse */
+      --ink-soft: #8893a4;       /* muted: rule, byline, back-link */
+      --accent: #9bb4cb;         /* moonlit slate-blue */
+      --font-display: 'Rozha One', serif;              /* उलझनें — title */
+      --font-verse: 'Tiro Devanagari Hindi', serif;    /* the verse */
+      --font-latin: 'Cormorant Garamond', Georgia, serif; /* English bits */
+      --verse-size: 1.5rem;
+      --verse-leading: 2.3;      /* room for matras + a breath of silence */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      /* a moonlit haze hanging over a cold, deep, silent night */
+      background:
+        radial-gradient(ellipse at 50% 28%, rgba(124, 146, 180, 0.24), transparent 60%),
+        linear-gradient(180deg, #1a2030 0%, #141926 46%, #0d1018 100%);
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: var(--font-verse);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+
+    .poem-wrap { flex: 1 0 auto; width: 100%; max-width: 44rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
+
+    .poem-title {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: 4rem; line-height: 1.08; letter-spacing: .01em;
+      margin: 0 0 .25rem; color: #f1f4f9;
+      text-shadow: 0 2px 30px rgba(124, 146, 180, 0.4);
+    }
+    .poem-sub { font-family: var(--font-latin); font-style: italic; font-size: 1.15rem; color: var(--accent); letter-spacing: .04em; margin: 0; }
+    .poem-rule { width: 3.5rem; height: 1px; border: 0; background: var(--accent); opacity: .8; margin: 1.6rem auto 2.8rem; }
+
+    /* Stanzas. Line breaks inside a stanza are preserved (pre-wrap). */
+    .verse {
+      white-space: pre-wrap;
+      font-family: var(--font-verse); font-weight: 400;
+      font-size: var(--verse-size); line-height: var(--verse-leading);
+      color: var(--ink); text-wrap: balance;
+    }
+    .verse .stanza { display: block; }
+    .verse .stanza + .stanza { margin-top: 1.8rem; }
+
+    .byline { margin-top: 3.8rem; font-family: var(--font-latin); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; }
+    .back:hover { color: var(--accent); }
+
+    @media (max-width: 480px) { :root { --verse-size: 1.3rem; } .poem-title { font-size: 2.8rem; } }
+  </style>
+</head>
+
+  <body>
+
+    <main class="poem-wrap">
+      <h1 class="poem-title">उलझनें</h1>
+      <p class="poem-sub">— what the eyes couldn't say</p>
+      <hr class="poem-rule" />
+
+      <div class="verse" lang="hi">
+<p class="stanza">कुछ उलझन में डाल दिया था उन सवालों ने
+शायद जवाब ज़हन में न आए
+या फिर अल्फ़ाज़ लबों तक आकर ठहर गए
+ये कभी हम समझ न पाए</p>
+
+<p class="stanza">उस सन्नाटे में नज़रें ही बोल देतीं कुछ अगर
+शायद उलझनें कुछ जातीं सुलझ
+कोशिश तो दिल की थी बहुत मगर
+नज़रों को ही शायद न थी समझ</p>
+      </div>
+
+      <p class="byline">Siddharth Singh</p>
+    </main>
+
+    <a class="back" href="/poems/">&larr; all poems</a>
+
+  </body>
+
+</html>

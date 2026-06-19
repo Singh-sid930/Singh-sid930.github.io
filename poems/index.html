@@ -76,8 +76,8 @@
       font-size: clamp(2.4rem, 7vw, 4rem);
       line-height: 1.1;
       letter-spacing: .01em;
-      /* gradient of evening hues, painted into the letterforms */
-      background: linear-gradient(105deg, #f0b96a 0%, #e08a6e 32%, #c06f8f 60%, #8a6aa6 82%, #5f5a90 100%);
+      /* each poem carries its own gradient via --poem-grad (warm dusk default) */
+      background: var(--poem-grad, linear-gradient(105deg, #f0b96a 0%, #e08a6e 32%, #c06f8f 60%, #8a6aa6 82%, #5f5a90 100%));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -105,6 +105,7 @@
     <!-- The list of poems. Add each new poem as a faint link here. -->
     <nav class="index" aria-label="poems">
       <a class="deva" href="/poems/shaam/">शाम</a>
+      <a class="deva" href="/poems/uljhanein/" style="--poem-grad: linear-gradient(105deg, #b6cee0 0%, #93b1cb 38%, #8197b8 66%, #6f7ba6 100%)">उलझनें</a>
     </nav>
 
   </body>
