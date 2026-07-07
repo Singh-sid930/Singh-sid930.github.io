@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>किनारे | Siddharth Singh</title>
+  <meta name="description" content="किनारे — a boat, the shores, and the sea. A poem.">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  <link rel="canonical" href="/poems/kinaare/">
+
+  <!--
+    ============================================================
+    PER-POEM THEME — "किनारे / Kinaare" (shores, the boat & the sea)
+    Mood: restless water, flowing between shores.
+    Background: layered sine-wave bands, y = A*sin(kx - ωt), each
+    scrolling at its own speed (parallax) over a gentle vertical
+    swell — a living sea.
+    ============================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Rozha+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #d6ece7;
+      --ink-soft: #7fa8a6;
+      --accent: #6fc7c0;
+      --font-display: 'Rozha One', serif;
+      --font-verse: 'Tiro Devanagari Hindi', serif;
+      --font-latin: 'Cormorant Garamond', Georgia, serif;
+      --verse-size: 1.5rem;
+      --verse-leading: 2.25;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #071319;
+      color: var(--ink);
+      font-family: var(--font-verse);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+
+    /* ---- the sea: soft, phase-offset sine bands that fade upward ---- */
+    .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% -15%, #164e58, transparent 58%),
+        linear-gradient(180deg, #0b2530 0%, #0a1e26 50%, #071319 100%);
+    }
+    /* blur softens the edges so the waves read as water, not ribbons */
+    .waves { position: absolute; left: -4%; right: -4%; bottom: -2%; width: 108%; height: 66%;
+      filter: blur(2.5px); animation: swell 9s ease-in-out infinite alternate; }
+    .waves svg { display: block; width: 100%; height: 100%; }
+    .wave { will-change: transform; }
+    /* low opacities + gradient fills (defined in <defs>) = faded, layered depth.
+       different baselines/amplitudes/phases + speeds/directions = organic, non-aligned */
+    .wave.w1 { opacity: .38; animation: waveScroll 31s linear infinite; }
+    .wave.w2 { opacity: .32; animation: waveScroll 21s linear -7s infinite reverse; }
+    .wave.w3 { opacity: .30; animation: waveScroll 15s linear -4s infinite; }
+    .wave.w4 { opacity: .24; animation: waveScroll 11s linear -2s infinite reverse; }
+    /* pattern period is 1440 user-units (half the 2880 viewBox) → seamless loop */
+    @keyframes waveScroll { from { transform: translateX(0); } to { transform: translateX(-1440px); } }
+    @keyframes swell { from { transform: translateY(1.2%); } to { transform: translateY(-1.6%); } }
+    @media (prefers-reduced-motion: reduce) { .waves, .wave { animation: none; } }
+
+    .poem-wrap { position: relative; z-index: 1; flex: 1 0 auto; width: 100%; max-width: 44rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
+
+    .poem-title {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: 4rem; line-height: 1.08; letter-spacing: .01em;
+      margin: 0 0 2.6rem; color: #eafcf8;
+      text-shadow: 0 2px 30px rgba(47, 166, 182, 0.45);
+    }
+    .poem-rule { width: 3.5rem; height: 1px; border: 0; background: var(--accent); opacity: .8; margin: 0 auto 2.8rem; }
+
+    .verse {
+      white-space: pre-wrap;
+      font-family: var(--font-verse); font-weight: 400;
+      font-size: var(--verse-size); line-height: var(--verse-leading);
+      color: var(--ink); text-wrap: balance;
+    }
+    .verse .stanza { display: block; }
+    .verse .stanza + .stanza { margin-top: 1.8rem; }
+
+    .byline { margin-top: 3.8rem; font-family: var(--font-latin); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; position: relative; z-index: 1; }
+    .back:hover { color: var(--accent); }
+
+    @media (max-width: 480px) { :root { --verse-size: 1.3rem; } .poem-title { font-size: 2.8rem; } }
+  </style>
+</head>
+
+  <body>
+
+    <div class="bg" aria-hidden="true">
+      <div class="waves">
+        <svg viewBox="0 0 2880 340" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f8f88" stop-opacity="0"/><stop offset=".92" stop-color="#1f8f88" stop-opacity=".6"/></linearGradient>
+            <linearGradient id="wg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2aa0a6" stop-opacity="0"/><stop offset=".92" stop-color="#2aa0a6" stop-opacity=".6"/></linearGradient>
+            <linearGradient id="wg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3ab0bc" stop-opacity="0"/><stop offset=".92" stop-color="#3ab0bc" stop-opacity=".6"/></linearGradient>
+            <linearGradient id="wg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fd0c8" stop-opacity="0"/><stop offset=".92" stop-color="#6fd0c8" stop-opacity=".6"/></linearGradient>
+          </defs>
+          <path class="wave w1" fill="url(#wg1)" d="M0,150 C240,122 480,122 720,150 C960,178 1200,178 1440,150 C1680,122 1920,122 2160,150 C2400,178 2640,178 2880,150 L2880,340 L0,340 Z"/>
+          <path class="wave w2" fill="url(#wg2)" d="M0,170 C240,210 480,210 720,170 C960,130 1200,130 1440,170 C1680,210 1920,210 2160,170 C2400,130 2640,130 2880,170 L2880,340 L0,340 Z"/>
+          <path class="wave w3" fill="url(#wg3)" d="M0,195 C240,171 480,171 720,195 C960,219 1200,219 1440,195 C1680,171 1920,171 2160,195 C2400,219 2640,219 2880,195 L2880,340 L0,340 Z"/>
+          <path class="wave w4" fill="url(#wg4)" d="M0,215 C240,233 480,233 720,215 C960,197 1200,197 1440,215 C1680,233 1920,233 2160,215 C2400,197 2640,197 2880,215 L2880,340 L0,340 Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <main class="poem-wrap">
+      <h1 class="poem-title">किनारे</h1>
+      <hr class="poem-rule" />
+
+      <div class="verse" lang="hi">
+<p class="stanza">लहरों से उलझते हुए कई किनारे देखे उसने
+कश्ती थी वो, दस्तूर था उसका
+कुछ यादें चढ़ती, कुछ ख़्वाहिशें उतरती
+हर किनारे कुछ लम्हे वो बिताती
+लहरों में रहना फ़ितूर था उसका</p>
+
+<p class="stanza">लहरों में अक्सर खोया भी ख़ुद को उसने
+लहर थी वो, फ़ितरत थी उसकी
+कुछ ख़ुशियाँ सँभालती, कुछ आँसू छुपाती
+किसी किनारे वो थम भी जाती
+किनारे थे, वो ज़िम्मेदारी थी उनकी</p>
+
+<p class="stanza">कई किनारों ने चाहा कि सँभाल लूँ उसे
+कश्ती थी वो, बहना था उसे
+रुकना तो थी चाहती, ज़िंदगी भी बितानी
+बस गहराई है कितनी, समझना था उसे</p>
+      </div>
+
+      <p class="byline">Siddharth Singh</p>
+    </main>
+
+    <a class="back" href="/poems/">&larr; all poems</a>
+
+  </body>
+
+</html>

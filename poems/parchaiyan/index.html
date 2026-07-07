@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>परछाइयाँ | Siddharth Singh</title>
+  <meta name="description" content="परछाइयाँ — shadows, reflections, and the light behind them. A poem.">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  <link rel="canonical" href="/poems/parchaiyan/">
+
+  <!--
+    ============================================================
+    PER-POEM THEME — "परछाइयाँ / Parchaiyan" (shadows & reflections)
+    Mood: chiaroscuro. A near-black of many shadows, through which a
+    single pale light slowly drifts — "the shadow was always here,
+    but where did the light come from?" Background blobs move on
+    Lissajous paths (x = A*sin(2πt/Tx), y = B*sin(2πt/Ty), Tx ≠ Ty).
+    ============================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Rozha+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #d7dce4;            /* pale silver verse */
+      --ink-soft: #838b9a;
+      --accent: #aeb8c8;         /* moonlight */
+      --font-display: 'Rozha One', serif;
+      --font-verse: 'Tiro Devanagari Hindi', serif;
+      --font-latin: 'Cormorant Garamond', Georgia, serif;
+      --verse-size: 1.5rem;
+      --verse-leading: 2.3;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #08090c;                     /* deep shadow fallback */
+      color: var(--ink);
+      font-family: var(--font-verse);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+
+    /* ---- shadows moving across a dimly-lit ground ---- */
+    .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden;
+      /* a brighter lit ground so passing shadows darken it visibly */
+      background: radial-gradient(ellipse at 50% 40%, #545c72 0%, #2a2e3a 42%, #101219 72%, #08090d 100%);
+    }
+    /* the wandering light, brighter now */
+    .bg .light { position: absolute; top: 38%; left: 50%; width: 62vmax; height: 62vmax;
+      margin: -31vmax 0 0 -31vmax; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,206,222,0.34) 0%, rgba(196,206,222,0) 64%);
+      mix-blend-mode: screen; will-change: transform;
+      animation: lightDrift 40s ease-in-out infinite alternate; }
+    /* dark shadow shapes — dense cores, sharper falloff — sweep across (multiply) */
+    .bg .orbit { position: absolute; will-change: transform; }
+    .bg .sh { position: absolute; width: 74vmax; height: 74vmax; margin: -37vmax 0 0 -37vmax;
+      border-radius: 50%; filter: blur(44px); mix-blend-mode: multiply; opacity: 1; will-change: transform;
+      background: radial-gradient(circle, #000004 0%, #000004 16%, rgba(0,0,4,0) 60%); }
+    .orbit.o1 { top: 42%; left: 34%; animation: driftX 24s ease-in-out -4s infinite alternate; }
+    .orbit.o2 { top: 56%; left: 68%; animation: driftX 31s ease-in-out -15s infinite alternate; }
+    .orbit.o3 { top: 46%; left: 52%; animation: driftX 19s ease-in-out -9s infinite alternate; }
+    .o1 .sh { animation: driftY 33s ease-in-out -7s infinite alternate; }
+    .o2 .sh { animation: driftY 26s ease-in-out -18s infinite alternate; }
+    .o3 .sh { animation: driftY 38s ease-in-out -3s infinite alternate; }
+    @keyframes driftX { from { transform: translateX(-24vw); } to { transform: translateX(23vw); } }
+    @keyframes driftY { from { transform: translateY(-20vh); } to { transform: translateY(21vh); } }
+    @keyframes lightDrift { from { transform: translate(-6vw, -4vh); } to { transform: translate(7vw, 5vh); } }
+    @media (prefers-reduced-motion: reduce) { .bg .orbit, .bg .sh, .bg .light { animation: none; } }
+
+    .poem-wrap { position: relative; z-index: 1; flex: 1 0 auto; width: 100%; max-width: 44rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
+
+    .poem-title {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: 4rem; line-height: 1.08; letter-spacing: .01em;
+      margin: 0 0 2.6rem; color: #f0f2f6;
+      text-shadow: 0 2px 34px rgba(174, 184, 200, 0.35);
+    }
+    .poem-rule { width: 3.5rem; height: 1px; border: 0; background: var(--accent); opacity: .75; margin: 0 auto 2.8rem; }
+
+    .verse {
+      white-space: pre-wrap;
+      font-family: var(--font-verse); font-weight: 400;
+      font-size: var(--verse-size); line-height: var(--verse-leading);
+      color: var(--ink); text-wrap: balance;
+    }
+    .verse .stanza { display: block; }
+    .verse .stanza + .stanza { margin-top: 1.8rem; }
+
+    .byline { margin-top: 3.8rem; font-family: var(--font-latin); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; position: relative; z-index: 1; }
+    .back:hover { color: var(--accent); }
+
+    @media (max-width: 480px) { :root { --verse-size: 1.3rem; } .poem-title { font-size: 2.8rem; } }
+  </style>
+</head>
+
+  <body>
+
+    <div class="bg" aria-hidden="true">
+      <div class="light"></div>
+      <div class="orbit o1"><div class="sh"></div></div>
+      <div class="orbit o2"><div class="sh"></div></div>
+      <div class="orbit o3"><div class="sh"></div></div>
+    </div>
+
+    <main class="poem-wrap">
+      <h1 class="poem-title">परछाइयाँ</h1>
+      <hr class="poem-rule" />
+
+      <div class="verse" lang="hi">
+<p class="stanza">कई सारे थे साये, और थी उनकी परछाई
+साथ चलते थे कई उसके, और साथ उनकी तन्हाई
+तलाश तो थी उसको, जो थी उसकी परछाई
+दिख न पाती मगर, उस भीड़ में जो साथ आई</p>
+
+<p class="stanza">सिमटते, उलझते, बदलते, कैसे ढूँढ पाता वो
+हर साये की तन्हाई में खो जाता वो
+देखते, पूछते, समझते, कहाँ पहुँच पाता वो
+हर साये की परछाई के पीछे, कैसे फिर जाता वो</p>
+
+<p class="stanza">देख न पाता वो, कि साये ही परछाई हैं
+समझ न पाता वो, कि परछाई ही तन्हाई है
+मान ले वो फिर अगर, कि यही उसकी सच्चाई है
+परछाई तो यहीं थी हमेशा, पर रोशनी कहाँ से आई है</p>
+      </div>
+
+      <p class="byline">Siddharth Singh</p>
+    </main>
+
+    <a class="back" href="/poems/">&larr; all poems</a>
+
+  </body>
+
+</html>

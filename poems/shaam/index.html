@@ -40,11 +40,7 @@
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
-      /* warm dusk glow up top, fading into deep plum night below */
-      background:
-        radial-gradient(ellipse at 50% -5%, rgba(232,150,82,0.55), transparent 52%),
-        linear-gradient(180deg, #3a1d33 0%, #271639 42%, #160f1f 100%);
-      background-attachment: fixed;
+      background: #160f1f;                     /* deep plum-night fallback */
       color: var(--ink);
       font-family: var(--font-verse);
       min-height: 100vh;
@@ -52,7 +48,26 @@
       display: flex; flex-direction: column;
     }
 
-    .poem-wrap { flex: 1 0 auto; width: 100%; max-width: 42rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
+    /* ---- a setting sun, descending toward the horizon ---- */
+    .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden;
+      background: linear-gradient(180deg, #241031 0%, #4a2140 30%, #8a3b45 58%, #c56a3c 82%, #e69a4c 100%);
+    }
+    .sun, .sun-glow { position: absolute; left: 50%; top: 52%; border-radius: 50%; will-change: transform, filter; }
+    .sun { width: 44vmin; height: 44vmin; margin-left: -22vmin;
+      background: radial-gradient(circle, #ffe7b4 0%, #ffc96a 36%, #f5a24e 58%, rgba(240,150,70,0) 72%);
+      animation: sunset 30s ease-in-out infinite alternate; }
+    .sun-glow { width: 96vmin; height: 96vmin; margin-left: -48vmin;
+      background: radial-gradient(circle, rgba(255,181,96,0.40) 0%, rgba(255,150,80,0) 62%);
+      animation: sunset 30s ease-in-out infinite alternate, breathe 9s ease-in-out infinite alternate; }
+    .cloud { position: absolute; left: -32%; border-radius: 50%; filter: blur(34px); background: rgba(46,18,42,0.55); will-change: transform; }
+    .cloud.c1 { top: 40%; width: 62vmin; height: 10vmin; animation: cloudDrift 44s linear infinite; }
+    .cloud.c2 { top: 63%; width: 86vmin; height: 12vmin; opacity: .7; animation: cloudDrift 62s linear -26s infinite; }
+    @keyframes sunset { from { transform: translateY(-12vh); filter: brightness(1.1); } to { transform: translateY(16vh); filter: brightness(.9); } }
+    @keyframes breathe { from { opacity: .75; } to { opacity: 1; } }
+    @keyframes cloudDrift { from { transform: translateX(0); } to { transform: translateX(178vw); } }
+    @media (prefers-reduced-motion: reduce) { .sun, .sun-glow, .cloud { animation: none; } }
+
+    .poem-wrap { position: relative; z-index: 1; flex: 1 0 auto; width: 100%; max-width: 42rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
 
     .poem-title {
       font-family: var(--font-display); font-weight: 400;
@@ -75,7 +90,7 @@
 
     .byline { margin-top: 3.8rem; font-family: var(--font-latin); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
 
-    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; }
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; position: relative; z-index: 1; }
     .back:hover { color: var(--accent); }
 
     @media (max-width: 480px) { :root { --verse-size: 1.3rem; } .poem-title { font-size: 2.8rem; } }
@@ -83,6 +98,13 @@
 </head>
 
   <body>
+
+    <div class="bg" aria-hidden="true">
+      <div class="sun-glow"></div>
+      <div class="sun"></div>
+      <div class="cloud c1"></div>
+      <div class="cloud c2"></div>
+    </div>
 
     <main class="poem-wrap">
       <h1 class="poem-title">शाम</h1>

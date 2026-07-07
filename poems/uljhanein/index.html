@@ -39,11 +39,7 @@
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
-      /* a moonlit haze hanging over a cold, deep, silent night */
-      background:
-        radial-gradient(ellipse at 50% 28%, rgba(124, 146, 180, 0.24), transparent 60%),
-        linear-gradient(180deg, #1a2030 0%, #141926 46%, #0d1018 100%);
-      background-attachment: fixed;
+      background: #0d1018;                     /* deep night fallback */
       color: var(--ink);
       font-family: var(--font-verse);
       min-height: 100vh;
@@ -51,7 +47,33 @@
       display: flex; flex-direction: column;
     }
 
-    .poem-wrap { flex: 1 0 auto; width: 100%; max-width: 44rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
+    /* ---- threads that weave: knots tightening and loosening ---- */
+    .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 28%, rgba(124, 146, 180, 0.20), transparent 60%),
+        linear-gradient(180deg, #1a2030 0%, #141926 46%, #0d1018 100%);
+    }
+    .threads { position: absolute; inset: 0; overflow: hidden; filter: blur(1.1px); }
+    .threads svg { width: 100%; height: 100%; }
+    /* each thread leans/slides on its own period, so neighbours cross
+       (tangle) then part (loosen) — never quite repeating */
+    .thread { fill: none; stroke-width: 1.6; stroke-linecap: round;
+      transform-box: fill-box; transform-origin: center; will-change: transform; }
+    .t1 { stroke: #6f8fc0; opacity: .34; animation: wv1 17s ease-in-out infinite alternate; }
+    .t2 { stroke: #5f9aa8; opacity: .30; animation: wv2 23s ease-in-out -5s infinite alternate; }
+    .t3 { stroke: #7d84c0; opacity: .32; animation: wv3 13s ease-in-out -3s infinite alternate; }
+    .t4 { stroke: #5aa0a0; opacity: .28; animation: wv4 27s ease-in-out -8s infinite alternate; }
+    .t5 { stroke: #6f8fc0; opacity: .30; animation: wv5 20s ease-in-out -2s infinite alternate; }
+    .t6 { stroke: #7d84c0; opacity: .26; animation: wv6 31s ease-in-out -11s infinite alternate; }
+    @keyframes wv1 { from { transform: translateX(-60px); }              to { transform: translateX(70px); } }
+    @keyframes wv2 { from { transform: translateX(55px) rotate(2deg); }  to { transform: translateX(-60px) rotate(-2deg); } }
+    @keyframes wv3 { from { transform: translateX(-45px); }              to { transform: translateX(65px); } }
+    @keyframes wv4 { from { transform: translateX(70px) rotate(-2deg); } to { transform: translateX(-50px) rotate(2deg); } }
+    @keyframes wv5 { from { transform: translateX(-70px); }              to { transform: translateX(55px); } }
+    @keyframes wv6 { from { transform: translateX(60px) rotate(1.5deg); }to { transform: translateX(-65px) rotate(-1.5deg); } }
+    @media (prefers-reduced-motion: reduce) { .thread { animation: none; } }
+
+    .poem-wrap { position: relative; z-index: 1; flex: 1 0 auto; width: 100%; max-width: 44rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
 
     .poem-title {
       font-family: var(--font-display); font-weight: 400;
@@ -74,7 +96,7 @@
 
     .byline { margin-top: 3.8rem; font-family: var(--font-latin); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
 
-    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; }
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; position: relative; z-index: 1; }
     .back:hover { color: var(--accent); }
 
     @media (max-width: 480px) { :root { --verse-size: 1.3rem; } .poem-title { font-size: 2.8rem; } }
@@ -82,6 +104,19 @@
 </head>
 
   <body>
+
+    <div class="bg" aria-hidden="true">
+      <div class="threads">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="thread t1" d="M180,-30 C110,110 250,250 180,400 C110,550 250,690 180,830"/>
+          <path class="thread t2" d="M380,-30 C470,110 290,250 380,400 C470,550 290,690 380,830"/>
+          <path class="thread t3" d="M560,-30 C500,110 620,250 560,400 C500,550 620,690 560,830"/>
+          <path class="thread t4" d="M720,-30 C820,110 620,250 720,400 C820,550 620,690 720,830"/>
+          <path class="thread t5" d="M900,-30 C825,110 975,250 900,400 C825,550 975,690 900,830"/>
+          <path class="thread t6" d="M1060,-30 C1145,110 975,250 1060,400 C1145,550 975,690 1060,830"/>
+        </svg>
+      </div>
+    </div>
 
     <main class="poem-wrap">
       <h1 class="poem-title">उलझनें</h1>
