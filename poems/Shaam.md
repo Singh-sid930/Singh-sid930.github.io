@@ -20,13 +20,13 @@ khone ki chahat thi usko, shaam se fir vahi
 
 Kho paaegi fir se kya, sham me, fir kabhi 
 
-Dhalna shaam ko tha, ek bar , har kahin
+Dhalna tha shaam ko firse, us din ke saath
 
-Savera bhi aana tha, har baar, har kahin
+Savera bhi aana tha firse, us raat ke bad
 
-Shaam se fir keh padi, ki tu na ja, tab tak kahin
+Shaam se kahti rahi ki aaj tu firse na jaa
 
-Shaam bhi fir keh padi, savere ke bad , tu hogi yahin?
+Shaam bhi fir keh padi, us subah ka kya jiski tu hai
 
 
 
