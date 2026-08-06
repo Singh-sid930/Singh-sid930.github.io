@@ -54,26 +54,26 @@
     }
     .sun, .sun-glow { position: absolute; left: 50%; top: 52%; border-radius: 50%; will-change: transform, filter; }
     .sun { width: 44vmin; height: 44vmin; margin-left: -22vmin;
-      background: radial-gradient(circle, #ffe7b4 0%, #ffc96a 36%, #f5a24e 58%, rgba(240,150,70,0) 72%);
-      animation: sunset 68s cubic-bezier(.35,.02,.15,1) forwards; }
+      background: radial-gradient(circle, #ffeec2 0%, #ffd076 46%, #f5a24e 62%, rgba(240,150,70,0) 74%);
+      animation: sunset 68s cubic-bezier(.25,.85,.28,1) forwards; }
     .sun-glow { width: 96vmin; height: 96vmin; margin-left: -48vmin;
       background: radial-gradient(circle, rgba(255,181,96,0.40) 0%, rgba(255,150,80,0) 62%);
-      animation: sunset 68s cubic-bezier(.35,.02,.15,1) forwards, breathe 12s ease-in-out infinite alternate; }
+      animation: sunset 68s cubic-bezier(.25,.85,.28,1) forwards, breathe 12s ease-in-out infinite alternate; }
     .cloud { position: absolute; left: -32%; border-radius: 50%; filter: blur(34px); background: rgba(46,18,42,0.55); will-change: transform; }
     .cloud.c1 { top: 42%; width: 62vmin; height: 10vmin; animation: cloudDrift 70s linear infinite; }
     .cloud.c2 { top: 66%; width: 86vmin; height: 12vmin; opacity: .7; animation: cloudDrift 96s linear -40s infinite; }
     /* a soft cloud bank on the horizon that the sun melts into */
     .cloudbank { position: absolute; left: 50%; bottom: -10vh; width: 170vw; height: 42vh; margin-left: -85vw;
-      background: radial-gradient(ellipse at 50% 72%, rgba(44,16,40,0.8) 0%, rgba(44,16,40,0.38) 42%, rgba(44,16,40,0) 70%);
+      background: radial-gradient(ellipse at 50% 72%, rgba(44,16,40,0.58) 0%, rgba(44,16,40,0.28) 42%, rgba(44,16,40,0) 70%);
       filter: blur(24px); }
-    /* one-way descent: slow, decelerating as it sinks, until fully gone */
+    /* one-way descent: decelerating as it sinks, resting with a sliver showing */
     @keyframes sunset { from { transform: translateY(-12vh); filter: brightness(1.12); }
-                        to   { transform: translateY(80vh);  filter: brightness(.82);  } }
+                        to   { transform: translateY(27vh);  filter: brightness(.86);  } }
     @keyframes breathe { from { opacity: .78; } to { opacity: 1; } }
     @keyframes cloudDrift { from { transform: translateX(0); } to { transform: translateX(178vw); } }
     @media (prefers-reduced-motion: reduce) {
       .sun, .sun-glow, .cloud { animation: none; }
-      .sun, .sun-glow { transform: translateY(24vh); }   /* a low, resting sun */
+      .sun, .sun-glow { transform: translateY(27vh); }   /* rest: a sliver above the edge */
     }
 
     .poem-wrap { position: relative; z-index: 1; flex: 1 0 auto; width: 100%; max-width: 42rem; margin: 0 auto; padding: 8vh 1.5rem 4rem; text-align: center; }
