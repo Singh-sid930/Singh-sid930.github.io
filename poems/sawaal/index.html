@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>सवाल | Siddharth Singh</title>
+  <meta name="description" content="सवाल — beyond the mountains, lost in a river of clouds. A poem.">
+
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+  <link rel="canonical" href="/poems/sawaal/">
+
+  <!--
+    ============================================================
+    PER-POEM THEME — "सवाल / Sawal" (questions)
+    Mood: a vantage above the valley at dusk — lost beyond the
+    mountains, asleep in the shade of questions, turning back.
+    Background: the photograph itself, held still behind a scrim,
+    drifting almost imperceptibly.
+    ============================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Rozha+One&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #f0e5d8;            /* warm dusk cream */
+      --ink-soft: #b3a596;
+      --accent: #e8a06a;         /* the horizon band */
+      --font-display: 'Rozha One', serif;
+      --font-verse: 'Tiro Devanagari Hindi', serif;
+      --font-latin: 'Cormorant Garamond', Georgia, serif;
+      --verse-size: 1.5rem;
+      --verse-leading: 2.3;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #11151d;                     /* dusk-blue fallback */
+      color: var(--ink);
+      font-family: var(--font-verse);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column;
+    }
+
+    /* ---- the photograph, drifting almost imperceptibly ---- */
+    /* side fill: a heavily blurred COVER copy of the same painting, so the
+       colours either side always match the image at that height */
+    .bg { position: fixed; inset: 0; z-index: -2; overflow: hidden; background: #11151d; }
+    .blurfill {
+      position: absolute; inset: -8%;
+      background: url("/poems/sawaal-paint.jpg") center center / cover no-repeat;
+      filter: blur(64px) saturate(.95) brightness(1.04);
+      transform: scale(1.12);
+    }
+    .photo {
+      position: absolute; inset: 0;
+      background: url("/poems/sawaal-paint.jpg") center center / auto 100% no-repeat;  /* keep portrait aspect */
+      filter: saturate(1.04) contrast(.9);
+      will-change: transform;
+      animation: drift 110s ease-in-out infinite alternate;
+      /* dissolve the left/right edges into the blurred fill behind.
+         The mask is sized to the image rect itself (height fills, so the
+         width is 100vh * 1205/1600), otherwise the fade lands off-image. */
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.45) 8%, #000 26%, #000 74%, rgba(0,0,0,.45) 92%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.45) 8%, #000 26%, #000 74%, rgba(0,0,0,.45) 92%, transparent 100%);
+      -webkit-mask-size: calc(100vh * 1205 / 1600) 100%;  mask-size: calc(100vh * 1205 / 1600) 100%;
+      -webkit-mask-position: center;                      mask-position: center;
+      -webkit-mask-repeat: no-repeat;                     mask-repeat: no-repeat;
+    }
+    /* fade the whole backdrop back */
+    .bg::after { content: ""; position: absolute; inset: 0; background: #141a26; opacity: .30; z-index: 1; }
+    /* faded wisps crossing the sky only — masked out before the hills */
+    .wisps { position: absolute; inset: 0; pointer-events: none; z-index: 3;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 40%, transparent 56%);
+              mask-image: linear-gradient(180deg, transparent 0%, #000 16%, #000 40%, transparent 56%); }
+    .wisps i { position: absolute; left: 0; right: 0; display: block;
+      background-repeat: repeat-x; will-change: background-position; }
+    .wisps .w1 { top: 10%; height: 34%; filter: blur(26px); background-size: 1100px 100%;
+      background-image:
+        radial-gradient(420px 34px at 200px 46%, rgba(246,226,206,0.42), transparent 72%),
+        radial-gradient(520px 26px at 700px 58%, rgba(246,226,206,0.34), transparent 74%);
+      animation: wispA 120s linear infinite; }
+    .wisps .w2 { top: 22%; height: 30%; filter: blur(20px); background-size: 820px 100%;
+      background-image:
+        radial-gradient(360px 22px at 140px 50%, rgba(240,196,168,0.38), transparent 72%),
+        radial-gradient(300px 18px at 560px 62%, rgba(240,196,168,0.30), transparent 74%);
+      animation: wispB 84s linear infinite; }
+    @keyframes wispA { from { background-position: 0 0; } to { background-position: -1100px 0; } }
+    @keyframes wispB { from { background-position: 0 0; } to { background-position: -820px 0; } }
+    /* scrim: keeps the verse legible and sinks the photo back into dusk */
+    .scrim { position: fixed; inset: 0; z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(16,20,32,0.34) 0%, rgba(16,20,32,0.08) 34%,
+                                 rgba(18,18,28,0.18) 62%, rgba(12,12,20,0.52) 100%),
+        radial-gradient(ellipse at 50% 42%, rgba(232,160,106,0.10), transparent 62%);
+    }
+    @keyframes drift { from { transform: scale(1.00) translate3d(0,0,0); }
+                       to   { transform: scale(1.05) translate3d(0, -0.6%, 0); } }
+    @media (prefers-reduced-motion: reduce) { .photo, .wisps i { animation: none; } }
+
+    .poem-wrap { position: relative; z-index: 1; flex: 1 0 auto; width: 100%; max-width: 44rem; margin: 0 auto; padding: 9vh 1.5rem 4rem; text-align: center; }
+
+    .poem-title {
+      font-family: var(--font-display); font-weight: 400;
+      font-size: 4rem; line-height: 1.08; letter-spacing: .01em;
+      margin: 0 0 2.6rem; color: #fff;
+      text-shadow: 0 2px 30px rgba(0,0,0,.55), 0 0 44px rgba(232,160,106,.3);
+    }
+    .poem-rule { width: 3.5rem; height: 1px; border: 0; background: var(--accent); opacity: .8; margin: 0 auto 2.8rem; }
+
+    .verse {
+      white-space: pre-wrap;
+      font-family: var(--font-verse); font-weight: 400;
+      font-size: var(--verse-size); line-height: var(--verse-leading);
+      color: var(--ink); text-wrap: balance;
+      text-shadow: 0 1px 16px rgba(0,0,0,.6);
+    }
+    .verse .stanza { display: block; }
+    .verse .stanza + .stanza { margin-top: 1.8rem; }
+
+    .byline { margin-top: 3.8rem; font-family: var(--font-latin); font-size: 1.1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .back { display: block; text-align: center; padding: 2rem 0 2.5rem; font-family: var(--font-latin); font-size: 1.05rem; letter-spacing: .15em; color: var(--ink-soft); text-decoration: none; flex-shrink: 0; position: relative; z-index: 1; }
+    .back:hover { color: var(--accent); }
+
+    @media (max-width: 480px) { :root { --verse-size: 1.3rem; } .poem-title { font-size: 2.8rem; } }
+  </style>
+</head>
+
+  <body>
+
+    <div class="bg" aria-hidden="true">
+      <div class="blurfill"></div>
+      <div class="photo"></div>
+      <div class="wisps"><i class="w1"></i><i class="w2"></i></div>
+    </div>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <main class="poem-wrap">
+      <h1 class="poem-title">सवाल</h1>
+      <hr class="poem-rule" />
+
+      <div class="verse" lang="hi">
+<p class="stanza">पहाड़ों के पार
+समंदर के ऊपर
+बादलों की नदी में
+खोए से थे हम</p>
+
+<p class="stanza">फिर से इन राहों में
+सवालों की छाँव में
+हक़ीक़त भुला के
+सोए से थे हम</p>
+
+<p class="stanza">लहरों को देखते
+लफ़्ज़ों को रोकते
+एक दूसरे की दुनिया में
+होते भी थे हम</p>
+
+<p class="stanza">तुमको फिर खो के
+हक़ीक़त में हो के
+सवालों में फिर से
+खोए भी थे हम</p>
+
+<p class="stanza">फिर यादों को लेके
+राहों पे चलते
+अक्सर पलट के
+रुके भी थे हम</p>
+      </div>
+
+      <p class="byline">Siddharth Singh</p>
+    </main>
+
+    <a class="back" href="/poems/">&larr; all poems</a>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2B76G5YP2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y2B76G5YP2');
+  </script>
+  </body>
+
+</html>
